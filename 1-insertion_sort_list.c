@@ -7,35 +7,6 @@
  *
  * Return: void
  */
-void insertion_sort_list_0(listint_t **list)
-{
-	listint_t *tmp, *ptr, *prev;
-
-	if (list == NULL || *list == NULL || (*list)->next == NULL)
-		return;
-
-	ptr = (*list)->next;
-	while (ptr)
-	{
-		prev = ptr->prev;
-		while (prev && (prev->n) > (ptr->n))
-		{
-			tmp = prev->prev;
-			if (prev->prev)
-				prev->prev->next = ptr;
-			else
-				*list = ptr;
-			prev->next = ptr->next;
-			prev->prev = ptr;
-			ptr->next = prev;
-			ptr->prev = tmp;
-			prev = tmp;
-			print_list(*list);
-		}
-		ptr = ptr->next;
-	}
-}
-
 void insertion_sort_list(listint_t **list)
 {
 	listint_t *ptr, *tmp, *tmp2;
