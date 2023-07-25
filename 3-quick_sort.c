@@ -34,11 +34,14 @@ int partition(int *array, size_t size, int lo, int hi)
 		{
 			i++;
 			swap(&array[i], &array[j]);
-			print_array(array, size);
+			if (i != j)
+				print_array(array, size);
 		}
 	}
 	i++;
 	swap(&array[i], &array[hi]);
+	if (i != j)
+		print_array(array, size);
 
 	return (i);
 }
