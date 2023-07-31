@@ -67,7 +67,7 @@ void merge_sort(int *array, size_t size)
 	tmp = malloc(sizeof(int) * size);
 	if (tmp == NULL)
 		return;
-	my_merge_sort(array, size, tmp, size);
+	my_merge_sort(array, size, tmp);
 
 	free(tmp);
 }
